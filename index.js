@@ -7,7 +7,7 @@ require("./mongo");
 //Route
 require("./routes");
 
-app.get((req,res)=>{
+app.get("/",(req,res)=>{
   res.send("Welcome home")
 })
 
