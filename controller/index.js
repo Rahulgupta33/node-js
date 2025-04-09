@@ -5,12 +5,20 @@ const {
     getMyInfo
 } = require("./user");
 
-//Auth
+//Password Store
 const {
 createPasswordStore,
 getPassword,
 getMyPasswords
 } = require("./passwordStoreController");
+
+
+//Folder Store
+const {
+    createFolder,
+    getMyFolders
+} = require("./folderStoreControllere");
+
 
 module.exports = {
     signupController,
@@ -18,5 +26,7 @@ module.exports = {
     getMyInfo,
     createPasswordStore,
     getPassword,
-    getMyPasswords
+    getMyPasswords,
+    createFolder,
+    getMyFolders
 };
