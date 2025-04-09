@@ -1,25 +1,31 @@
 const mongoose = require("mongoose");
 const { User_Schema } = require("./user");
+const { folderStore_Schema } = require("./folder");
 
 const passwordStoreSchema = mongoose.Schema({
-    key: {
+    title: {
         type: String,
-        required: [true, "please enter a key or name"],
+        required: [true, "please enter a title."],
     },
     password: {
         type: String,
-        required: [true, "please enter a password"],
+        required: [true, "please enter a password."],
     },
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: User_Schema,
     },
-    app: {
+    email: {
         type: String,
-        required: [true, "please enter a your app name"],
+        required: [true, "please enter a your email."],
     },
-    description : {
+    description: {
         type: String
+    },
+    folderId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: folderStore_Schema,
+        required: [true, "Folder Id not found or missing."],
     },
     createAt: {
         type: Date,

@@ -5,9 +5,9 @@ const createFolder = async (req, response) => {
 
     let userId = req.user._id;
 
-    const passwordStore = new folderStore_Schema({ userId, folderName, description });
-    await passwordStore.save();
-    return response.status(200).send({ success: true, result: passwordStore });
+    const folderStore = new folderStore_Schema({ userId, folderName, description });
+    await folderStore.save();
+    return response.status(200).send({ success: true, result: folderStore });
 }
 
 const getMyFolders = async (req, response) => {
@@ -21,9 +21,6 @@ const getMyFolders = async (req, response) => {
             (item) => item?.userId?.toString() == userId?.toString()
         );
 
-        console.log(myFolders);
-
-
         if (myFolders.length > 0) {
             return response.status(200).send({
                 success: true,
@@ -32,7 +29,7 @@ const getMyFolders = async (req, response) => {
         } else {
             response.status(400).send({
                 success: false,
-                message: "No post found",
+                message: "No Folder found",
             });
         }
     } catch (error) {

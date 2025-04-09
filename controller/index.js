@@ -9,7 +9,8 @@ const {
 const {
 createPasswordStore,
 getPassword,
-getMyPasswords
+getMyPasswords,
+geyMyPasswordFolder
 } = require("./passwordStoreController");
 
 
@@ -24,9 +25,12 @@ module.exports = {
     signupController,
     loginController,
     getMyInfo,
+    //Password Store
     createPasswordStore,
     getPassword,
     getMyPasswords,
+    geyMyPasswordFolder,
+    //Folder Store
     createFolder,
     getMyFolders
 };
