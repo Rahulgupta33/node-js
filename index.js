@@ -7,4 +7,8 @@ require("./mongo");
 //Route
 require("./routes");
 
+app.get("/",(req,res)=>{
+  res.send("Welcome home")
+})
+
 app.listen(port, () => console.log(`Server run on ${port}`));
